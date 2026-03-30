@@ -1,34 +1,33 @@
 <!--
-1️⃣  Download Files:
-   • index.html (this file)
-   • Calvin Headshot.JPG
-   • Calvin Riley CV.docx
+  1️⃣  Download Files:
+        • index.html (this file)
+        • Calvin Headshot.JPG
+        • Calvin Riley CV.docx
 
-2️⃣  Log in to GoDaddy:
-   • Go to https://www.godaddy.com → My Products → locate your domain (calvinrileyii.com).
+  2️⃣  Log in to GoDaddy:
+        • Go to https://www.godaddy.com → My Products → locate your domain (calvinrileyii.com).
 
-3️⃣  Upload Files via File Manager:
-   • Under Web Hosting, click Manage → cPanel Admin → File Manager.
-   • Navigate to `public_html/`.
-   • Upload index.html, the headshot image, and CV file there.
-   • Ensure index.html is in the root (not inside a folder).
+  3️⃣  Upload Files via File Manager:
+        • Under Web Hosting, click Manage → cPanel Admin → File Manager.
+        • Navigate to `public_html/`.
+        • Upload index.html, the headshot image, and CV file there.
+        • Ensure index.html is in the root (not inside a folder).
 
-4️⃣  Test Your Site:
-   • Visit https://calvinrileyii.com
-   • If it doesn’t load immediately, clear browser cache or wait up to 15 minutes for DNS refresh.
+  4️⃣  Test Your Site:
+        • Visit https://calvinrileyii.com
+        • If it doesn't load immediately, clear browser cache or wait up to 15 minutes for DNS refresh.
 
-5️⃣  (Optional) If you’re using a website builder or external host like Netlify or GitHub Pages:
-   • In GoDaddy DNS settings, set your A record to the host IP or CNAME provided by that platform.
+  5️⃣  (Optional) If you're using a website builder or external host like Netlify or GitHub Pages:
+        • In GoDaddy DNS settings, set your A record to the host IP or CNAME provided by that platform.
 
-6️⃣  Future Edits:
-   • Re-upload a new index.html file to public_html to update the site.
-   • The footer’s “Last Updated” date will automatically refresh.
+  6️⃣  Future Edits:
+        • Re-upload a new index.html file to public_html to update the site.
+        • The footer's "Last Updated" date will automatically refresh.
 
-7️⃣  Troubleshooting:
-   • If you see a directory listing or 403 error, check that your homepage file is named exactly `index.html`.
-   • If images don’t appear, verify file names match (case-sensitive).
--->
-<!doctype html>
+  7️⃣  Troubleshooting:
+        • If you see a directory listing or 403 error, check that your homepage file is named exactly `index.html`.
+        • If images don't appear, verify file names match (case-sensitive).
+--><!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -53,8 +52,7 @@
     .chips{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px}
     .chip{background:var(--chip);border:1px solid #24304a;color:#cfe2ff;padding:6px 10px;border-radius:999px;font-size:12px}
     nav{margin:24px 0 0 0;display:flex;gap:14px;flex-wrap:wrap}
-    nav a{padding:10px 12px;border-radius:10px;background:#111827;border:1px solid #1f2937}
-    main{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:24px}
+    nav a{padding:10px 12px;border-radius:10px;background:#111827;border:1px solid #1f2937}    main{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:24px}
     @media(max-width:900px){main{grid-template-columns:1fr}}
     section{background:var(--card);border:1px solid #1a2234;border-radius:16px;padding:18px}
     section h2{font-size:18px;margin:0 0 12px 0}
@@ -68,151 +66,175 @@
     footer{margin:24px 0;color:var(--muted);text-align:center;font-size:13px}
     .link-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
     .pill{background:#0f1628;border:1px solid #27334c;padding:8px 10px;border-radius:999px}
+    .social-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .social-links a{display:inline-flex;align-items:center;gap:6px;background:#0f1628;border:1px solid #27334c;padding:8px 14px;border-radius:999px;font-size:13px;font-weight:600;transition:border-color .2s}
+    .social-links a:hover{border-color:var(--accent);text-decoration:none}
+    .soundcloud-embed{margin-top:14px;border-radius:12px;overflow:hidden}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="avatar" aria-hidden="true"></div>
-      <div>
-        <h1>Calvin Riley</h1>
-        <p class="tagline">People-first leader in payments... building ecosystems that connect partners and technology</p>
-        <div class="chips">
-          <span class="chip">ISV & ISO Growth</span>
-          <span class="chip">Voyager & HUB</span>
-          <span class="chip">Enterprise Merchants</span>
-          <span class="chip">Arizona → Seattle</span>
+<div class="wrap">
+  <header>
+    <div class="avatar" aria-hidden="true"></div>
+    <div>
+      <h1>Calvin Riley</h1>
+      <p class="tagline">People-first leader in payments... building ecosystems that connect partners and technology</p>      <div class="chips">
+        <span class="chip">ISV &amp; ISO Growth</span>
+        <span class="chip">Voyager &amp; HUB</span>
+        <span class="chip">Enterprise Merchants</span>
+        <span class="chip">Arizona &rarr; Seattle</span>
+      </div>
+      <div class="cta">
+        <a class="btn" href="mailto:calvinrileyii@gmail.com">Email me</a>
+        <a class="btn secondary" href="Calvin Riley CV.docx" download>Download R&eacute;sum&eacute;</a>
+        <a class="btn secondary" href="https://calendly.com/calvin-riley" target="_blank" rel="noopener">Book time on Calendly</a>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#personal">Personal</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>I may work in payments, but I'm a people-first kind of guy.</p>
+      <p>As Director of Sales at <strong>Equinox Payments</strong>, I help ISVs and ISOs scale with seamless hardware integrations and long-term solutions that drive growth. I bring a consultative approach shaped by years in the field, including over a decade of hands-on experience with Equinox products—even before joining the team.</p>      <p>My path here wasn't traditional. I started as a barista and DJ, managed teams early on, and studied business and broadcasting in college. Along the way, I learned that listening matters more than talking, strong teams beat solo talent, and growth comes from staying just a little uncomfortable.</p>
+      <p>I'm big on emerging tech, passionate about supporting software partners, and always focused on building real relationships—whether with clients, teammates, or partners.</p>
+      <p>When I'm not working, I'm either watching the Lakers, DJing, or running around with my two kids.</p>
+      <p>Let's connect to talk payments strategy, ISV growth, or just swap leadership lessons from the field.</p>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="item">
+        <h3>Director of Sales — Equinox Payments <span class="muted">Jun 2025 – Present</span></h3>
+        <p class="muted">Lead Equinox's growth across ISV and ISO channels, expanding presence among enterprise merchants, gateways, and resellers. Oversee strategic partnerships and integration efforts for Voyager, Luxe, and HUB estate management.</p>
+      </div>
+      <div class="item">
+        <h3>Strategic Partnerships Director — Vendara Payments <span class="muted">Jul 2023 – May 2025</span></h3>
+        <p class="muted">Managed strategic partnerships with ISVs and ISOs ranging from SMBs to enterprise. Negotiated ISV partnerships projected to bring $250M in annual processing. Expanded Vendara's product portfolio and built ISV programs from scratch.</p>
+      </div>
+      <div class="item">
+        <h3>Senior Account Executive / National Sales Director — PayJunction <span class="muted">2014 – 2023</span></h3>
+        <p class="muted">Generated $1B+ in processing revenue. Onboarded 100+ new accounts through ISV and channel relationships. Led a 22&#8209;person reseller team, optimized vertical integrations, and guided API collaboration between software developers and agents.</p>
+      </div>
+      <div class="item">
+        <h3>Relationship Manager — Heartland Payment Systems <span class="muted">Sep 2020 – Jun 2023</span></h3>
+        <p class="muted">Achieved top national profit margin ($175K) in year one, improving API integration understanding and driving scalable client acquisition and retention.</p>
+      </div>      <div class="item">
+        <h3>Branch Rental Manager — Enterprise Rent&#8209;A&#8209;Car <span class="muted">2004 – 2012</span></h3>
+        <p class="muted">Advanced through multiple management roles, achieving 35% fleet growth and a 90%+ Service Quality Index. Developed strong sales, operations, and leadership skills managing large teams.</p>
+      </div>
+      <div class="item">
+        <h3>Store Manager — Caf&eacute; Sienna / Espresso Roma <span class="muted">2000 – 2003</span></h3>
+        <p class="muted">Promoted to manage multiple caf&eacute;s and concessions, improving service quality and operational flow while cultivating leadership and teamwork fundamentals.</p>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="item">
+        <h3>Northwest University, Kirkland WA <span class="muted">In Progress</span></h3>
+        <p class="muted">MBA in Applied Artificial Intelligence</p>
+      </div>
+      <div class="item">
+        <h3>Full Sail University <span class="muted">2011 – 2013</span></h3>
+        <p class="muted">Master's in Internet Marketing</p>
+      </div>
+      <div class="item">
+        <h3>San Francisco State University <span class="muted">2002 – 2005</span></h3>
+        <p class="muted">Bachelor of Arts in Business Administration &amp; Radio and Television</p>
+      </div>
+      <div class="item">
+        <h3>Santa Barbara City College <span class="muted">1999 – 2001</span></h3>
+        <p class="muted">Undergraduate Studies</p>
+      </div>      <div class="item">
+        <h3>University of California, Santa Barbara <span class="muted">1995 – 1997</span></h3>
+        <p class="muted">Chemical Engineering (Foundational Coursework)</p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects &amp; Creative</h2>
+      <div class="item">
+        <h3>Discography &amp; DJ</h3>
+        <p class="muted">20+ years as a DJ and Creative Director... from Santa Barbara residencies to large festivals and a San Francisco radio show. Still performing occasional sets to stay connected to the craft.</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/calvin-riley-ii/" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://soundcloud.com/funkynegro" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M1.175 12.225c-.051 0-.094.046-.101.1l-.233 2.154.233 2.105c.007.058.05.098.101.098.05 0 .09-.04.099-.098l.255-2.105-.27-2.154c-.009-.06-.05-.1-.1-.1m-.899.828c-.06 0-.091.037-.104.094L0 14.479l.172 1.282c.013.06.045.094.104.094.059 0 .09-.038.104-.094l.194-1.282-.194-1.332c-.014-.057-.045-.094-.104-.094m1.794-1.482c-.06 0-.105.047-.112.105l-.218 2.803.218 2.744c.007.058.052.104.112.104.06 0 .106-.046.116-.104l.246-2.744-.246-2.803c-.01-.058-.056-.105-.116-.105m.871-.468c-.068 0-.114.05-.123.112l-.209 3.271.209 3.157c.009.064.055.112.123.112.068 0 .113-.048.123-.112l.236-3.157-.236-3.271c-.01-.062-.055-.112-.123-.112m.901-.332c-.076 0-.122.052-.128.117l-.2 3.603.2 3.467c.006.07.052.12.128.12.075 0 .12-.05.13-.12l.226-3.467-.226-3.603c-.01-.065-.055-.117-.13-.117m.893-.27c-.083 0-.131.056-.136.124l-.192 3.873.192 3.667c.005.073.053.127.136.127.082 0 .13-.054.138-.127l.218-3.667-.218-3.873c-.008-.068-.056-.124-.138-.124m.912-.167c-.05 0-.095.02-.126.054-.032.033-.051.079-.055.126l-.183 4.04.183 3.802c.004.079.054.137.137.143.04.003.077-.012.107-.042.033-.034.054-.08.058-.132l.207-3.771-.207-4.04c-.004-.052-.025-.098-.058-.132-.03-.03-.067-.048-.107-.048h.044m.947-.045c-.095 0-.172.077-.178.172l-.175 4.085.175 3.834c.006.095.083.172.178.172.094 0 .17-.077.178-.172l.199-3.834-.199-4.085c-.008-.095-.084-.172-.178-.172m.929.049c-.103 0-.183.08-.19.183l-.165 3.853.165 3.79c.007.103.087.183.19.183.103 0 .183-.08.192-.183l.187-3.79-.187-3.853c-.009-.103-.089-.183-.192-.183m.921.042c-.11 0-.195.085-.2.195l-.157 3.811.157 3.747c.005.11.09.195.2.195s.195-.085.203-.195l.178-3.747-.178-3.811c-.008-.11-.093-.195-.203-.195m.913.139c-.118 0-.208.09-.214.207l-.148 3.672.148 3.705c.006.118.096.21.214.21.117 0 .207-.09.215-.21l.168-3.705-.168-3.672c-.008-.117-.098-.207-.215-.207m5.604-2.119c-.255 0-.503.028-.743.083C22.703 4.552 19.297 1.6 15.32 1.6c-1.074 0-2.125.25-3.075.695-.356.168-.45.34-.453.672v13.478c.003.34.267.625.607.645h8.574c2.07 0 3.748-1.678 3.748-3.748 0-2.072-1.678-3.748-3.748-3.748"/></svg>
+            SoundCloud
+          </a>          <a href="https://www.instagram.com/d.j.calvin/" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            Instagram
+          </a>
         </div>
-        <div class="cta">
-          <a class="btn" href="mailto:calvinrileyii@gmail.com">Email me</a>
-          <a class="btn secondary" href="Calvin Riley CV.docx" download>Download Résumé</a>
-          <a class="btn secondary" href="https://calendly.com/calvin-riley" target="_blank" rel="noopener">Book time on Calendly</a>
+        <div class="soundcloud-embed">
+          <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/funkynegro&color=%237cc5ff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+            loading="lazy"></iframe>
         </div>
       </div>
-    </header>
+      <div class="item">
+        <h3>LinkedIn Activity</h3>
+        <p class="muted">Writing about AI in payments, sales strategy, and building human-led tech ecosystems. Check out my latest articles and posts.</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/calvin-riley-ii/recent-activity/all/" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            View my LinkedIn posts &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+    <section id="personal">
+      <h2>Personal</h2>
+      <div class="item">
+        <h3>Family &amp; Travel</h3>
+        <p class="muted">Weekends at the baseball field, exploring PNW trails, dreaming about an Airstream road trip, and discovering great tacos with my kids.</p>
+      </div>
+      <div class="item">
+        <h3>Community</h3>
+        <p class="muted">Active in Bible study and local volunteering. Focused on building habits that keep life balanced and aligned.</p>
+      </div>
+    </section>
 
-    <nav>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#education">Education</a>
-      <a href="#personal">Personal</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="grid-2">
+        <div class="item">
+          <h3>Reach Out</h3>
+          <p class="muted">calvinrileyii@gmail.com<br>LinkedIn — <a href="https://www.linkedin.com/in/calvin-riley-ii/" target="_blank">/in/calvin-riley-ii</a><br>Calendly — <a href="https://calendly.com/calvin-riley" target="_blank">book a chat</a></p>
+        </div>
+        <div class="item">
+          <h3>Elsewhere</h3>
+          <p class="muted">
+            LinkedIn — <a href="https://www.linkedin.com/in/calvin-riley-ii/" target="_blank">/in/calvin-riley-ii</a><br>
+            SoundCloud — <a href="https://soundcloud.com/funkynegro" target="_blank">funkynegro</a><br>
+            Instagram — <a href="https://www.instagram.com/d.j.calvin/" target="_blank">@d.j.calvin</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <main>
-      <section id="about">
-        <h2>About</h2>
-        <p>I may work in payments, but I’m a people-first kind of guy.</p>
-        <p>As Director of Sales at <strong>Equinox Payments</strong>, I help ISVs and ISOs scale with seamless hardware integrations and long-term solutions that drive growth. I bring a consultative approach shaped by years in the field, including over a decade of hands-on experience with Equinox products—even before joining the team.</p>
-        <p>My path here wasn’t traditional. I started as a barista and DJ, managed teams early on, and studied business and broadcasting in college. Along the way, I learned that listening matters more than talking, strong teams beat solo talent, and growth comes from staying just a little uncomfortable.</p>
-        <p>I’m big on emerging tech, passionate about supporting software partners, and always focused on building real relationships—whether with clients, teammates, or partners.</p>
-        <p>When I’m not working, I’m either watching the Lakers, DJing, or running around with my two kids.</p>
-        <p>Let’s connect to talk payments strategy, ISV growth, or just swap leadership lessons from the field.</p>
-      </section>
-
-      <section id="experience">
-        <h2>Experience</h2>
-        <div class="item">
-          <h3>Director of Sales — Equinox Payments <span class=\"muted\">Jun 2025 – Present</span></h3>
-          <p class="muted">Lead Equinox’s growth across ISV and ISO channels, expanding presence among enterprise merchants, gateways, and resellers. Oversee strategic partnerships and integration efforts for Voyager, Luxe, and HUB estate management.</p>
-        </div>
-        <div class="item">
-          <h3>Strategic Partnerships Director — Vendara Payments <span class="muted">Jul 2023 – May 2025</span></h3>
-          <p class="muted">Managed strategic partnerships with ISVs and ISOs ranging from SMBs to enterprise. Negotiated ISV partnerships projected to bring $250M in annual processing. Expanded Vendara’s product portfolio and built ISV programs from scratch.</p>
-        </div>
-        <div class="item">
-          <h3>Senior Account Executive / National Sales Director — PayJunction <span class="muted">2014 – 2023</span></h3>
-          <p class="muted">Generated $1B+ in processing revenue. Onboarded 100+ new accounts through ISV and channel relationships. Led a 22‑person reseller team, optimized vertical integrations, and guided API collaboration between software developers and agents.</p>
-        </div>
-        <div class="item">
-          <h3>Relationship Manager — Heartland Payment Systems <span class="muted">Sep 2020 – Jun 2023</span></h3>
-          <p class="muted">Achieved top national profit margin ($175K) in year one, improving API integration understanding and driving scalable client acquisition and retention.</p>
-        </div>
-        <div class="item">
-          <h3>Branch Rental Manager — Enterprise Rent‑A‑Car <span class="muted">2004 – 2012</span></h3>
-          <p class="muted">Advanced through multiple management roles, achieving 35% fleet growth and a 90%+ Service Quality Index. Developed strong sales, operations, and leadership skills managing large teams.</p>
-        </div>
-        <div class="item">
-          <h3>Store Manager — Café Sienna / Espresso Roma <span class="muted">2000 – 2003</span></h3>
-          <p class="muted">Promoted to manage multiple cafés and concessions, improving service quality and operational flow while cultivating leadership and teamwork fundamentals.</p>
-        </div>
-      </section>
-
-      <section id="education">
-        <h2>Education</h2>
-        <div class="item">
-          <h3>Full Sail University <span class="muted">2011 – 2013</span></h3>
-          <p class="muted">Master’s in Internet Marketing</p>
-        </div>
-        <div class="item">
-          <h3>San Francisco State University <span class="muted">2002 – 2005</span></h3>
-          <p class="muted">Bachelor of Arts in Business Administration & Radio and Television</p>
-        </div>
-        <div class="item">
-          <h3>Santa Barbara City College <span class="muted">1999 – 2001</span></h3>
-          <p class="muted">Undergraduate Studies</p>
-        </div>
-        <div class="item">
-          <h3>University of California, Santa Barbara <span class="muted">1995 – 1997</span></h3>
-          <p class="muted">Chemical Engineering (Foundational Coursework)</p>
-        </div>
-      </section>
-
-      <section id="projects">
-        <h2>Projects & Creative</h2>
-        <div class="item">
-          <h3>Discography & DJ</h3>
-          <p class="muted">20+ years as a DJ and Creative Director... from Santa Barbara residencies to large festivals and a San Francisco radio show. Still performing occasional sets to stay connected to the craft.</p>
-          <p class="muted"><a href="https://www.linkedin.com/in/calvin-riley-ii/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://www.instagram.com/d.j.calvin/" target="_blank" rel="noopener">Instagram</a></p>
-          <div id="instagram" style="background:#0b0f1d">
-            <h3 style="margin-top:0">Instagram — live feed</h3>
-            <p class="muted">Embed your live Instagram feed or story widget below.</p>
-            <div style="position:relative;padding-top:56.25%;border:1px solid #27334c;border-radius:12px;overflow:hidden">
-              <iframe title="Instagram Feed" src="https://lightwidget.com/widgets/your-widget-id.html" style="position:absolute;inset:0;width:100%;height:100%;border:0" loading="lazy"></iframe>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <h3>Partnership highlight — Oliver POS Exclusive</h3>
-          <p class="muted">Negotiated an exclusive U.S. processing partnership with Oliver POS at Vendara, establishing a multi‑million‑dollar opportunity and enhancing ISV offerings.</p>
-        </div>
-      </section>
-
-      <section id="personal">
-        <h2>Personal</h2>
-        <div class="item">
-          <h3>Family & Travel</h3>
-          <p class="muted">Weekends at the baseball field, exploring PNW trails, dreaming about an Airstream road trip, and discovering great tacos with my kids.</p>
-        </div>
-        <div class="item">
-          <h3>Community</h3>
-          <p class="muted">Active in Bible study and local volunteering. Focused on building habits that keep life balanced and aligned.</p>
-        </div>
-      </section>
-
-      <section id="contact">
-        <h2>Contact</h2>
-        <div class="grid-2">
-          <div class="item">
-            <h3>Reach Out</h3>
-            <p class="muted">calvinrileyii@gmail.com<br>LinkedIn — <a href="https://www.linkedin.com/in/calvin-riley-ii/" target="_blank">/in/calvin-riley-ii</a><br>Calendly — <a href="https://calendly.com/calvin-riley" target="_blank">book a chat</a></p>
-          </div>
-          <div class="item">
-            <h3>Elsewhere</h3>
-            <p class="muted">Instagram — <a href="https://www.instagram.com/d.j.calvin/" target="_blank">@d.j.calvin</a><br>LinkedIn — <a href="https://www.linkedin.com/in/calvin-riley-ii/" target="_blank">/in/calvin-riley-ii</a></p>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>© <span id="year"></span> Calvin Riley • Last updated <span id="updated"></span></footer>
-  </div>
-  <script>
-    document.getElementById('year').textContent=new Date().getFullYear();
-    const date=new Date();
-    const opts={year:'numeric',month:'long',day:'numeric'};
-    document.getElementById('updated').textContent=date.toLocaleDateString(undefined,opts);
-  </script>
+  <footer>&copy; <span id="year"></span> Calvin Riley &bull; Last updated <span id="updated"></span></footer>
+</div>
+<script>
+  document.getElementById('year').textContent=new Date().getFullYear();
+  const date=new Date();
+  const opts={year:'numeric',month:'long',day:'numeric'};
+  document.getElementById('updated').textContent=date.toLocaleDateString(undefined,opts);
+</script>
 </body>
 </html>
