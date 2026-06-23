@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Meridian — Strategizer Assumption Test Cards (Milestone 3)</title>
+<style>
+  body {
+    margin: 40px auto;
+    max-width: 720px;
+    background: #fff;
+    font-family: system-ui, -apple-system, sans-serif;
+    color: #1a1a1a;
+  }
+  h1 { font-size: 22px; margin-bottom: 4px; }
+  p.subtitle { font-size: 14px; color: #666; margin-bottom: 8px; }
+  p.context { font-size: 13px; color: #444; margin-bottom: 32px; line-height: 1.6; }
+  .test-card {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    background: #fff;
+  }
+  .card-header {
+    padding: 12px 16px;
+    font-weight: 700;
+    font-size: 15px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .card-header.assumption { background: #2563eb; }
+  .card-header.dropoff { background: #dc2626; }
+  .card-body { padding: 16px 18px; }
+  .step {
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .step:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .step-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #888;
+    margin-bottom: 4px;
+  }
+  .step-prompt {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+  }
+  .step-content {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+  }
+  .risk-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 4px;
+  }
+  .risk-high { background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); }
+  .risk-med { background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); }
+  .divider {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: #888;
+    margin: 36px 0 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  @media print {
+    body { margin: 20px; }
+    .test-card { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<h1>The Meridian — Assumption Test Cards</h1>
+<p class="subtitle">Osterwalder / Strategizer Format | Milestone 3 Deliverable</p>
+<p class="context">
+  7 testable assumptions mapped to The Meridian's user flow: 3 core path assumptions (Discernment, Clinical Routing, Coaching)
+  and 4 drop-off assumptions that represent the "missing tree" — states where the system fails to retain or route the user.
+  Framework reference: False Positive Framework, Lead Domino Theory, Relational Mirror AI logic.
+</p>
+
+<!-- ===== CORE PATH ASSUMPTIONS ===== -->
+
+<div class="test-card">
+  <div class="card-header assumption">
+    <span>Assumption 1: The Discernment Path</span>
+    <span class="risk-tag risk-med">Medium Risk</span>
+  </div>
+  <div class="card-body">
+    <div class="step">
+      <div class="step-label">Step 1: Hypothesis</div>
+      <div class="step-prompt">We believe that</div>
+      <div class="step-content">faith-curious professionals who complete the full discovery and track experience will reach a state of Integrated Discernment — the ability to distinguish clinical needs from spiritual needs and act on both.</div>
+    </div>
+    <div class="step">
+      <div class="step-label">Step 2: Test</div>
+      <div class="step-prompt">To verify that, we will</div>
+      <div class="step-content">run 8–12 users through a prototype discovery + track sequence (even paper-based) and conduct exit interviews measuring whether they can articulate the difference between a clinical issue and a spiritual one in their own life.</div>
+    </div>
+    <div class="step">
+      <div class="step-label">Step 3: Metric</div>
+      <div class="step-prompt">And measure</div>
+      <div class="step-content">% of users who can correctly self-triage a scenario (clinical vs. spiritual vs. both) in a post-track assessment, compared to their pre-intake baseline.</div>
+    </div>
+    <div class="step">
+      <div class="step-label">Step 4: Criteria</div>
+      <div class="step-prompt">We are right if</div>
+      <div class="step-content">≥60% of completing users show measurable improvement in discernment accuracy, AND they describe the experience as "clarifying" rather than "prescriptive."</div>
+    </div>
+  </div>
+</div>
+
+<div class="test-card">
+  <div class="card-header assumption">
+    <span>Assumption 2: The Clinical Routing Path</span>
+    <span class="risk-tag risk-med">Medium Risk</span>
+  </div>
+  <div class="card-body">
+    <div class="step">
+      <div class="step-label">Step 1: Hypothesis</div>
+      <div class="step-prompt">We believe that</div>
+      <div class="step-content">the AI Relational Mirror can reliably detect clinical red-line signals (addiction severity, self-harm indicators, clinical depression markers) during the discovery process and route those users to human clinical professionals.</div>
+    </div>
+    <div class="step">
+      <div class="step-label">Step 2: Test</div>
+      <div class="step-prompt">To verify that, we will</div>
+      <div class="step-content">create 20 scripted user scenarios (10 clinical, 10 non-clinical) and have Lauren + one additional clinician independently score each. Run the same scenarios through the AI logic and compare routing decisions.</div>
+    </div>
+    <div class="step">
+      <div class="step-label">Step 3: Metric</div>
+      <div class="step-prompt">And measure</div>
+      <div class="step-content">sensitivity (true positive rate for clinical detection) and false negative rate (clinical cases the AI missed). False negatives are the critical failure mode.</div>
+    </div>
+    <div class="step">
+      <div class="step-label">Step 4: Criteria</div>
+      <div class="step-prompt">We are right if</div>
+      <div class="step-content">AI achieves ≥90% sensitivity on clinical detection (we can tolerate false positives — over-referring is safer than under-referring) with 0% false negatives on severe cases.</div>
+    </div>
+  </div>
+</div>
+
+<div class="test-card">
+  <div class="card-header assumption">
+    <span>Assumption 3: The Coaching Path</span>
+    <span class="risk-tag risk-med">Medium Risk</span>
+  </div>
+  <div class="card-body">
+    <div class="step">
+      <div class="step-label">Step 1: Hypothesis</div>
+      <div class="step-prompt">We believe that</div>
+      <div class="step-content">users who don't respond to AI-delivered content alone will respond to a human coach, and that the AI's diagnostic data will make coaching sessions more effective than cold-start coaching.</div>
+    </div>
+    <div class="step">
+      <div class="step-label">Step 2: Test</div>
+      <div class="step-prompt">To verify that, we will</div>
+      <div class="step-content">identify 5 users from the prototype who stalled on content tracks. Pair them with a coach who receives the AI's diagnostic summary vs. a coach who starts from scratch. Compare session outcomes.</div>
+    </div>
+    <div class="step">
+      <div class="step-label">Step 3: Metric</div>
+      <div class="step-prompt">And measure</div>
+      <div class="step-content">sessions-to-breakthrough (how many sessions before the user reports a meaningful insight) and user-reported satisfaction with the coaching experience.</div>
+    </div>
+    <div class="step">
+      <div class="step-label">Step 4: Criteria</div>
+      <div class="step-prompt">We are right if</div>
+      <div class="step-content">AI-informed coaches reach breakthrough 40% faster than cold-start coaches, AND users rate the experience ≥4/5 on relevance ("they understood where I was").</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider">— Drop-Off Assumptions (The Missing Tree) —</div>
+
+<div class="test-card">
+  <div class="card-header dropoff">
+    <span>Drop-Off 1: "Not Ready"</span>
+    <span class="risk-tag risk-high">High Risk</span>
+  </div>
+  <div class="card-body">
+    <div class="step">
+      <div class="step-label">Step 1: Hypothesis</div>
+      <div class="step-prompt">We believe that</div>
+      <div class="step-content">the Lead Domino sequence (Achievement → Image → Control → Autonomy) is calibrated correctly — users will tolerate the Relational Mirror probing past surface-level topics without bouncing.</div>
+    </div>
+    <div class="step">
+      <div class="step-label">Step 2: Test</div>
+      <div class="step-prompt">To verify that, we will</div>
+      <div class="step-content">run discovery sessions with 10 users and track the exact moment they disengage (change topic, give short answers, express discomfort). Map disengagement to the specific Lead Domino layer they were on.</div>
+    </div>
+    <div class="step">
+      <div class="step-label">Step 3: Metric</div>
+      <div class="step-prompt">And measure</div>
+      <div class="step-content">drop-off layer (which of the 4 layers triggers disengagement), time-to-disengage, and whether a "cool-down" prompt can re-engage them.</div>
+    </div>
+    <div class="step">
+      <div class="step-label">Step 4: Criteria</div>
+      <div class="step-prompt">We are right if</div>
+      <div class="step-content">≥70% of users progress past Layer 2 (Image & Perception) without disengaging, AND cool-down prompts recover ≥50% of those who stall.</div>
+    </div>
+  </div>
+</div>
+
+<div class="test-card">
+  <div class="card-header dropoff">
+    <span>Drop-Off 2: "Wrong Fit"</span>
+    <span class="risk-tag risk-high">High Risk</span>
+  </div>
+  <div class="card-body">
+    <div class="step">
+      <div class="step-label">Step 1: Hypothesis</div>
+      <div class="step-prompt">We believe that</div>
+      <div class="step-content">the 4 False Positives (Achievement Mirage, Control Fortress, Image Mirror, Autonomy Island) are comprehensive enough to classify ≥80% of the target persona.</div>
+    </div>
+    <div class="step">
+      <div class="step-label">Step 2: Test</div>
+      <div class="step-prompt">To verify that, we will</div>
+      <div class="step-content">interview 15–20 "High-Functioning Void" professionals and have them self-identify which False Positive resonates. Track anyone who says "none of these."</div>
+    </div>
+    <div class="step">
+      <div class="step-label">Step 3: Metric</div>
+      <div class="step-prompt">And measure</div>
+      <div class="step-content">classification coverage (% who map to at least one FP), time-to-identification, and whether "none" respondents reveal a 5th pattern.</div>
+    </div>
+    <div class="step">
+      <div class="step-label">Step 4: Criteria</div>
+      <div class="step-prompt">We are right if</div>
+      <div class="step-content">≥80% self-identify with a False Positive within the first discovery session. If &lt;80%, a 5th category likely needs to be defined.</div>
+    </div>
+  </div>
+</div>
+
+<div class="test-card">
+  <div class="card-header dropoff">
+    <span>Drop-Off 3: "Spiritual Allergic Reaction"</span>
+    <span class="risk-tag risk-high">High Risk</span>
+  </div>
+  <div class="card-body">
+    <div class="step">
+      <div class="step-label">Step 1: Hypothesis</div>
+      <div class="step-prompt">We believe that</div>
+      <div class="step-content">the "implied faith, not forced" positioning allows us to introduce scripture and spiritual content without triggering the Religious Allergy in faith-curious (but not faith-committed) users.</div>
+    </div>
+    <div class="step">
+      <div class="step-label">Step 2: Test</div>
+      <div class="step-prompt">To verify that, we will</div>
+      <div class="step-content">create 3 versions of the same track content: (A) no faith language, (B) implied/indirect spiritual framing, (C) explicit scripture. Test each with 5 faith-curious users and measure reaction.</div>
+    </div>
+    <div class="step">
+      <div class="step-label">Step 3: Metric</div>
+      <div class="step-prompt">And measure</div>
+      <div class="step-content">completion rate per version, sentiment shift (positive → negative), and the specific content element that triggers disengagement.</div>
+    </div>
+    <div class="step">
+      <div class="step-label">Step 4: Criteria</div>
+      <div class="step-prompt">We are right if</div>
+      <div class="step-content">Version B (implied faith) retains ≥70% of users through to track completion, AND sentiment stays neutral-to-positive. If Version B also triggers drop-off, the spiritual integration timing needs redesign.</div>
+    </div>
+  </div>
+</div>
+
+<div class="test-card">
+  <div class="card-header dropoff">
+    <span>Drop-Off 4: "Silent Plateau"</span>
+    <span class="risk-tag risk-high">High Risk</span>
+  </div>
+  <div class="card-body">
+    <div class="step">
+      <div class="step-label">Step 1: Hypothesis</div>
+      <div class="step-prompt">We believe that</div>
+      <div class="step-content">users who get relief from surface-level content (Layer 1: Achievement) will naturally want to go deeper, rather than plateauing at "good enough."</div>
+    </div>
+    <div class="step">
+      <div class="step-label">Step 2: Test</div>
+      <div class="step-prompt">To verify that, we will</div>
+      <div class="step-content">track 10 users through a multi-week content track. After they report initial relief or insight, observe whether they voluntarily continue or need prompting to go deeper.</div>
+    </div>
+    <div class="step">
+      <div class="step-label">Step 3: Metric</div>
+      <div class="step-prompt">And measure</div>
+      <div class="step-content">voluntary continuation rate (% who advance without prompting), days-to-plateau, and whether a "what's still unresolved" nudge re-engages plateau users.</div>
+    </div>
+    <div class="step">
+      <div class="step-label">Step 4: Criteria</div>
+      <div class="step-prompt">We are right if</div>
+      <div class="step-content">≥50% voluntarily continue past Layer 1 content. If &lt;50%, the product may need a "bridge mechanism" between surface relief and deeper work — the initial value alone won't pull them through.</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

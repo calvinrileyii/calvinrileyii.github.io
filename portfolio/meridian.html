@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Meridian — Case Study · Calvin Riley</title>
+  <meta name="description" content="Case study: The Meridian, an AI guide to inner clarity. Context, problem, approach, AI integration, iteration, evaluation, impact, and learnings." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="wrap">
+      <div class="brand">Calvin <span>Riley</span></div>
+      <div class="links">
+        <a href="index.html">← All work</a>
+        <a href="#evaluation">Evaluation</a>
+        <a href="#learnings">Learnings</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CASE HERO -->
+  <header class="cs-hero">
+    <div class="wrap">
+      <span class="eyebrow">Case Study · Founder &amp; AI Orchestrator</span>
+      <h1>The Meridian</h1>
+      <p class="sub">An AI agent that meets successful-but-empty professionals where they are, runs a clinically-informed discovery conversation, and helps them name the patterns driving their discontent — safely.</p>
+    </div>
+  </header>
+
+  <!-- TL;DR EXECUTIVE HOOK -->
+  <div class="wrap">
+    <div class="tldr">
+      <h2>TL;DR</h2>
+      <p>
+        Millions of high-functioning professionals look successful by every external metric and feel empty underneath — but
+        they haven't decided they need therapy or religion, so they fall through the cracks between both. <b>The Meridian</b> is a
+        deployed AI agent ("Dr. Lauren") that holds a warm, clinically-informed conversation, surfaces which of four
+        identity-level "false positives" a person is running on, and gently points toward a durable foundation — with
+        deterministic safety guardrails that route anyone in crisis to human help. Validated with four synthetic personas and
+        six human testers: <b>4/4 patterns classified correctly, 0 false negatives on crisis signals.</b>
+      </p>
+      <ul class="facts">
+        <li><b>Goal</b> Build a teachable category — "integrated inner clarity" — as a real, safe AI product</li>
+        <li><b>My role</b> Founder, product &amp; AI orchestrator (with a licensed clinical-psychologist co-founder)</li>
+        <li><b>Timeframe</b> March – June 2026 (concept → deployed prototype)</li>
+        <li><b>Tools</b> Claude (agent brain), Next.js, Supabase, Cartesia (voice), Vercel</li>
+        <li><b>Core problem</b> A whole population is underserved between clinical care and faith</li>
+        <li><b>Key learning</b> The conversation was never the hard part — the reliability layer around it was</li>
+      </ul>
+    </div>
+    <p class="tiny" style="margin:10px 0 0;">Context note: built as the capstone project for INTC 6033 (Researching AI Strategies), an MBA course. The project doubled as a real venture and the academic deliverable.</p>
+  </div>
+
+  <!-- BODY: 8 ELEMENTS -->
+  <div class="wrap cs-body">
+
+    <!-- 1 CONTEXT -->
+    <section id="context">
+      <h2><span class="num">01</span> Context</h2>
+      <p>
+        This started personally. My wife is a licensed clinical psychologist; I work in payments and build with AI. Over and over
+        we saw the same person from two different professional angles: the high earner who has "made it" and is quietly running on
+        empty. The clinical world calls them one thing; the faith world calls them another. Neither world reaches them early,
+        because reaching out means first accepting a label — "patient" or "believer" — that they haven't accepted yet.
+      </p>
+      <p class="muted">
+        The market around this person is crowded but missed: faith-aligned therapy marketplaces (still therapy), meditation and
+        devotional apps (no clinical depth), AI therapy chatbots (no spiritual dimension), and faith chatbots (no clinical
+        framework). Six layers of competitors, and a clean gap down the middle: nobody was building an AI that meets you where you
+        are, runs a genuinely clinical discovery process, and only then — with consent — points at a deeper foundation.
+      </p>
+    </section>
+
+    <!-- 2 PROBLEM -->
+    <section id="problem">
+      <h2><span class="num">02</span> Problem</h2>
+      <p>
+        <b>High-functioning professionals who are successful on paper but empty underneath have no low-stakes front door to
+        clarity.</b> Therapy asks them to self-identify as needing help; religion asks them to self-identify as believers. Most
+        won't do either yet — so they self-medicate with the next win, the next drink, the next status marker, and the underlying
+        pattern never gets named.
+      </p>
+      <div class="callout">
+        <b>The reframe that made it an AI problem.</b> The world hands these people positive signals — money, status, attention —
+        that read as "I'm okay." They're <i>false positives</i>: the test says success while the interior runs empty. Naming which
+        false positive someone is living on requires a patient, adaptive, judgment-free conversation that scales to anyone, anytime.
+        That is precisely what a well-orchestrated AI agent can do — and a static app, quiz, or content library cannot.
+      </div>
+    </section>
+
+    <!-- 3 APPROACH -->
+    <section id="approach">
+      <h2><span class="num">03</span> Approach &amp; Process</h2>
+      <p>The project advanced through a deliberate research sequence — each milestone made the next decision sharper:</p>
+      <ul>
+        <li><b>Human-centered framing &amp; landscape mapping.</b> Defined the persona by a <i>condition</i> (successful-but-empty), not a faith posture, and mapped six competitor layers to locate the gap.</li>
+        <li><b>Clinical framework extraction.</b> Translated my co-founder's 20 years of clinical practice into a structured knowledge base: an intake method, a belief-system map (six profiles), a faith-integration bridge, and five client archetypes.</li>
+        <li><b>Task analysis &amp; workflow modeling (BPMN/UML).</b> Diagrammed the full user journey across roles — user, AI, content engine, and a clinical team — including the parallel safety check and three distinct end states (clarity, clinical handoff, human coaching).</li>
+        <li><b>Assumption mapping.</b> Wrote seven testable assumption cards (three "happy path," four drop-off) so I was testing the riskiest beliefs, not the comfortable ones.</li>
+        <li><b>Build → test → iterate.</b> Shipped a working prototype, then validated it with synthetic personas and human testers before widening access.</li>
+      </ul>
+      <div class="figure embed">
+        <iframe src="assets/meridian-bpmn-diagram.html" title="BPMN business process diagram of the discovery flow" loading="lazy"></iframe>
+        <div class="cap"><b>Task analysis artifact — BPMN.</b> The discovery flow modeled across four organizational roles (User, AI Platform, Content Ops, Clinical Team), with the clinical red-line safety check as an error-boundary event and three distinct end states. Interactive — scroll within the frame.</div>
+      </div>
+      <div class="figure embed">
+        <iframe src="assets/meridian-standard-flowchart.html" title="Standard user-flow flowchart" loading="lazy"></iframe>
+        <div class="cap"><b>User-flow logic.</b> The same journey as a standard flowchart, showing the two re-entry loops when a pattern hasn't surfaced or content doesn't resonate.</div>
+      </div>
+    </section>
+
+    <!-- 4 AI INTEGRATION -->
+    <section id="ai-integration">
+      <h2><span class="num">04</span> AI Integration</h2>
+      <p>
+        The product <i>is</i> the AI. "Dr. Lauren" is a Claude-powered agent whose system prompt encodes the full clinical
+        framework: a Stage-0 rapport pass, a four-layer "lead domino" sequence that gently moves from safe surface topics toward
+        identity-level beliefs, a confidence-tracked classification of the four false positives, and a consent-gated moment where a
+        spiritual foundation can enter — never as doctrine up front. Around that brain sit voice input/output, authentication, and
+        persistence.
+      </p>
+      <p class="muted">The architecture follows a clean agent loop: sensors (user input) → policy layer (the clinical framework) → tools (the relational mirror, scripture, classification) → quality gates (safety screening, confidence thresholds) → learning signals (engagement, progression).</p>
+      <div class="shots">
+        <div class="shot">
+          <img src="assets/app-landing.png" alt="The Meridian landing screen — Identify Your False Positives, A Guide to Inner Clarity" onerror="this.closest('.shot').style.display='none'" />
+          <div class="cap">The front door: a calm, low-stakes invitation — no clinical or religious language.</div>
+        </div>
+        <div class="shot">
+          <img src="assets/app-onboarding.png" alt="Onboarding — A candid conversation with Dr. Lauren" onerror="this.closest('.shot').style.display='none'" />
+          <div class="cap">Onboarding sets scope: a candid conversation with a clinician, "you lead the pace."</div>
+        </div>
+        <div class="shot">
+          <img src="assets/app-chat.png" alt="The Dr. Lauren discovery chat with the visible journey meter" onerror="this.closest('.shot').style.display='none'" />
+          <div class="cap">The discovery chat. The six-step journey meter makes the agent's progress <i>legible</i> without exposing clinical labels.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 ITERATION -->
+    <section id="iteration">
+      <h2><span class="num">05</span> Iteration</h2>
+      <p>The solution-thinking changed more than the solution. Three pivots mattered most:</p>
+      <ul>
+        <li><b>Voice: from second brain to interface.</b> I chased real-time voice for its speed and it quietly spawned a <i>second</i> agent that drifted from the clinical brain. I tore it out and rebuilt voice as pure input/output around the original Claude agent. <b>Principle earned: the brain is the product; everything else is swappable.</b></li>
+        <li><b>Positioning: from "faith-curious" to a condition.</b> Early framing defined the user by a spiritual posture, which narrowed the market and tripped a "religious allergy." I redefined the persona by the <i>condition</i> (successful-but-empty) and made faith the destination, not the front door.</li>
+        <li><b>Telemetry: from confident demo to reliable system.</b> The agent held beautiful conversations but would drop its internal tracking on the longest, most emotional turns — so a great conversation could fail to deliver a result. The fix was architectural (merge state additively across turns), not a prompt rewrite.</li>
+      </ul>
+      <table class="tbl">
+        <thead><tr><th>Decision</th><th>Options weighed</th><th>Call &amp; rationale</th></tr></thead>
+        <tbody>
+          <tr><td><b>Agent brain</b></td><td>Claude vs. a real-time voice model as the reasoner</td><td><b>Claude owns reasoning.</b> Conversation quality and a stable system prompt mattered more than latency.</td></tr>
+          <tr><td><b>Voice provider</b></td><td>OpenAI TTS vs. Cartesia vs. ElevenLabs</td><td><b>Cartesia</b> for natural voice and a clean path to cloning; isolated behind one endpoint so it's swappable.</td></tr>
+          <tr><td><b>Memory model</b></td><td>Full transcript every turn vs. merged structured state</td><td><b>Merged state.</b> Cheaper context and a reliable record of what the agent had learned.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 6 EVALUATION -->
+    <section id="evaluation">
+      <h2><span class="num">06</span> Evaluation</h2>
+      <p>I validated the prototype on three fronts before widening access:</p>
+      <ul>
+        <li><b>Synthetic personas.</b> Four custom-prompted agents simulating the core archetypes (plus a crisis-control persona) ran through the live system. <b>All four patterns classified correctly; the crisis persona was caught and routed to human resources every time.</b></li>
+        <li><b>Human testers + SME review.</b> Six early users plus my clinical-psychologist co-founder reviewed conversation quality, classification fit, and tone.</li>
+        <li><b>Adversarial / edge-case testing.</b> I deliberately probed the safety red-line (hopelessness, self-harm signals) to confirm the system over-refers rather than under-refers.</li>
+      </ul>
+      <div class="figure embed">
+        <iframe src="assets/meridian-assumption-test-cards.html" title="Assumption test cards" loading="lazy"></iframe>
+        <div class="cap"><b>Assumption mapping artifact.</b> Seven testable assumptions in Strategizer test-card format — three core-path and four drop-off — so testing targeted the riskiest beliefs (e.g. "will users tolerate the conversation going deeper?") rather than the comfortable ones.</div>
+      </div>
+      <p class="muted" style="margin-top:6px;"><b>Risks I identified and addressed:</b></p>
+      <table class="tbl">
+        <thead><tr><th>Risk</th><th>Mitigation</th></tr></thead>
+        <tbody>
+          <tr><td><b>False negative on a crisis signal</b> (the critical failure mode)</td><td>Deterministic, sticky-and-escalating safety state; the moment a signal fires, the session cannot route to a "result" and surfaces human crisis resources. Bar: 0% false negatives.</td></tr>
+          <tr><td><b>Category confusion / "bait-and-switch"</b></td><td>Honest about the category up front, consent-led on the spiritual reveal; clinical rigor preserved so it never collapses into "another faith app."</td></tr>
+          <tr><td><b>Scope-of-practice / liability</b></td><td>Positioned as guided reflection and literacy, not therapy; clinical handoff is a first-class end state, not an afterthought.</td></tr>
+          <tr><td><b>Automation bias</b> (trusting the model's reveal blindly)</td><td>Human-in-the-loop SME review of content; a deterministic server-side reveal gate independent of the model's own claim.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 7 IMPACT / KPIs -->
+    <section id="impact">
+      <h2><span class="num">07</span> Aspirational Impact &amp; KPIs</h2>
+      <p>As a pre-launch prototype, impact is framed as the KPIs I'd own at scale, tied directly to the friction point:</p>
+      <div class="kpis">
+        <div class="kpi"><div class="n">≥80%</div><div class="l">of target users self-identify with a surfaced pattern within the first session (classification coverage)</div></div>
+        <div class="kpi"><div class="n">0%</div><div class="l">false negatives on crisis signals — the non-negotiable safety bar</div></div>
+        <div class="kpi"><div class="n">≥50%</div><div class="l">voluntary continuation past the first "surface relief" stage (depth of engagement)</div></div>
+      </div>
+      <p class="muted">Supporting metrics I instrumented for: turns-to-reveal, time-to-reveal, drop-off stage, % reaching the pattern reveal, % of returning users, and a qualitative "this resonates" rate from exit reflections.</p>
+    </section>
+
+    <!-- 8 LEARNINGS -->
+    <section id="learnings">
+      <h2><span class="num">08</span> Key Learnings &amp; Stewardship</h2>
+      <ul>
+        <li><b>The demo lies; the reliability layer tells the truth.</b> A convincing conversation is not a working product. The real product was the state, memory, and safety plumbing around the model — and I under-weighted it because the conversation already <i>felt</i> finished.</li>
+        <li><b>Protect the brain; make everything else swappable.</b> Every failure pushed the same direction: don't compromise the core reasoning for a flashy capability — absorb the chaos at the edges instead.</li>
+        <li><b>Make the AI's work legible.</b> The system was discerning patterns before users could feel it happening. A visible, invitational journey turned hidden intelligence into perceived value — a design discipline separate from making the model smart.</li>
+        <li><b>Honesty is a strategy, not just an ethic.</b> In a trust-dependent category, being transparent about <i>what</i> the product is while staying consent-led on <i>when</i> the sensitive part enters is the whole moat.</li>
+      </ul>
+      <div class="callout">
+        <b>If I scaled this beyond the prototype:</b> harden the human-in-the-loop clinical escalation into a staffed pathway, add per-user memory so the agent remembers across sessions, and stand up continuous evaluation to catch drift — because in a mental-health-adjacent product, a silent regression is the most expensive failure there is.
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap">
+      <h2>Want the deeper walkthrough?</h2>
+      <p>Happy to talk through the architecture, the research, or the trade-offs.</p>
+      <div class="contacts">
+        <a href="mailto:calvinrileyii@gmail.com">Email</a>
+        <a href="https://github.com/calvinrileyii" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div><a class="backlink" href="index.html">← Back to all work</a></div>
+    </div>
+  </footer>
+
+</body>
+</html>

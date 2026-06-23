@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Meridian — BPMN Business Process Diagram</title>
+<style>
+  body { margin: 40px; background: #fff; font-family: system-ui, -apple-system, sans-serif; }
+  h1 { font-size: 22px; color: #1a1a1a; margin-bottom: 4px; }
+  p.subtitle { font-size: 14px; color: #666; margin-bottom: 24px; }
+</style>
+</head>
+<body>
+<h1>The Meridian — BPMN Business Process Diagram</h1>
+<p class="subtitle">Business process across 4 roles: User, AI Platform, Content Ops, Clinical Team. Shows handoffs, timer events, error boundaries, and 3 distinct end states.</p>
+
+<svg viewBox="0 0 740 1100" xmlns="http://www.w3.org/2000/svg" role="img" style="max-width:740px;">
+  <title>The Meridian — BPMN Business Process Diagram</title>
+  <desc>BPMN diagram showing the business operation across four roles including escalation and handoff paths.</desc>
+  <style>
+    text { font-family: system-ui, -apple-system, sans-serif; }
+    .lane-header { font-size: 12px; font-weight: 700; fill: #1a1a1a; text-anchor: middle; dominant-baseline: central; }
+    .label { font-size: 11px; fill: #1a1a1a; text-anchor: middle; dominant-baseline: central; }
+    .label-bold { font-size: 11px; fill: #1a1a1a; text-anchor: middle; dominant-baseline: central; font-weight: 600; }
+    .label-sm { font-size: 9.5px; fill: #666; text-anchor: middle; dominant-baseline: central; }
+    .label-xs { font-size: 8.5px; fill: #888; text-anchor: middle; dominant-baseline: central; }
+    .arrow { stroke: #777; stroke-width: 1.3; fill: none; marker-end: url(#bah); }
+    .msg-arrow { stroke: #777; stroke-width: 1.3; fill: none; stroke-dasharray: 6,3; marker-end: url(#bah); }
+    .lane-border { stroke: #ccc; stroke-width: 1; fill: none; }
+    .task-user { stroke: #2563eb; stroke-width: 1.3; fill: #eff6ff; }
+    .task-service { stroke: #7c3aed; stroke-width: 1.3; fill: #f5f3ff; }
+    .task-manual { stroke: #0d9488; stroke-width: 1.3; fill: #f0fdfa; }
+    .task-clinical { stroke: #dc2626; stroke-width: 1.3; fill: #fef2f2; }
+    .gateway { stroke: #d97706; stroke-width: 1.5; fill: #fffbeb; }
+    .evt-start { stroke: #059669; stroke-width: 2; fill: #ecfdf5; }
+    .evt-end { stroke: #1e293b; stroke-width: 3; fill: #f1f5f9; }
+    .evt-end-good { stroke: #059669; stroke-width: 3; fill: #ecfdf5; }
+    .evt-intermediate { stroke: #d97706; stroke-width: 1.5; fill: #fffbeb; }
+    .evt-error { stroke: #dc2626; stroke-width: 2; fill: #fef2f2; }
+    .branch-yes { font-size: 9.5px; fill: #059669; font-weight: 600; }
+    .branch-no { font-size: 9.5px; fill: #dc2626; font-weight: 600; }
+    .note { font-size: 9px; fill: #999; text-anchor: middle; font-style: italic; }
+    .gw-symbol { font-size: 14px; fill: #d97706; text-anchor: middle; dominant-baseline: central; font-weight: 700; }
+    .icon { font-size: 10px; fill: #888; }
+  </style>
+  <defs>
+    <marker id="bah" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#777" />
+    </marker>
+  </defs>
+  <!-- LEGEND -->
+  <g transform="translate(10, 8)">
+    <circle cx="8" cy="7" r="6" class="evt-start" />
+    <text x="20" y="10" class="label-xs" text-anchor="start">Start</text>
+    <circle cx="58" cy="7" r="6" class="evt-end" />
+    <text x="70" y="10" class="label-xs" text-anchor="start">End</text>
+    <rect x="100" y="1" width="18" height="12" rx="3" class="task-user" />
+    <text x="124" y="10" class="label-xs" text-anchor="start">User Task</text>
+    <rect x="190" y="1" width="18" height="12" rx="3" class="task-service" />
+    <text x="214" y="10" class="label-xs" text-anchor="start">Service Task</text>
+    <rect x="290" y="1" width="18" height="12" rx="3" class="task-manual" />
+    <text x="314" y="10" class="label-xs" text-anchor="start">Manual Task</text>
+    <polygon points="404,7 411,1 418,7 411,13" class="gateway" />
+    <text x="424" y="10" class="label-xs" text-anchor="start">Gateway</text>
+    <circle cx="478" cy="7" r="6" class="evt-error" />
+    <text x="490" y="10" class="label-xs" text-anchor="start">Error Event</text>
+    <line x1="604" y1="7" x2="628" y2="7" class="msg-arrow" />
+    <text x="634" y="10" class="label-xs" text-anchor="start">Message</text>
+  </g>
+  <!-- SWIM LANE BACKGROUNDS -->
+  <rect x="5" y="32" width="175" height="1063" rx="4" fill="#eff6ff" opacity="0.25" />
+  <rect x="184" y="32" width="200" height="1063" rx="4" fill="#f5f3ff" opacity="0.25" />
+  <rect x="388" y="32" width="165" height="1063" rx="4" fill="#f0fdfa" opacity="0.25" />
+  <rect x="557" y="32" width="178" height="1063" rx="4" fill="#fef2f2" opacity="0.25" />
+  <line x1="182" y1="32" x2="182" y2="1095" class="lane-border" />
+  <line x1="386" y1="32" x2="386" y2="1095" class="lane-border" />
+  <line x1="555" y1="32" x2="555" y2="1095" class="lane-border" />
+  <!-- LANE HEADERS -->
+  <rect x="5" y="32" width="175" height="26" rx="4" fill="#dbeafe" />
+  <text x="92" y="45" class="lane-header">USER</text>
+  <rect x="184" y="32" width="200" height="26" rx="4" fill="#ede9fe" />
+  <text x="284" y="45" class="lane-header">AI PLATFORM</text>
+  <rect x="388" y="32" width="165" height="26" rx="4" fill="#ccfbf1" />
+  <text x="470" y="45" class="lane-header">CONTENT OPS</text>
+  <rect x="557" y="32" width="178" height="26" rx="4" fill="#fee2e2" />
+  <text x="646" y="45" class="lane-header">CLINICAL TEAM</text>
+  <!-- START -->
+  <circle cx="92" cy="82" r="12" class="evt-start" />
+  <line x1="92" y1="94" x2="92" y2="116" class="arrow" />
+  <!-- USER COMPLETES INTAKE -->
+  <rect x="22" y="116" width="140" height="42" rx="8" class="task-user" />
+  <text x="92" y="132" class="label-bold">Complete Intake</text>
+  <text x="92" y="146" class="label-sm">Answer discovery Q's</text>
+  <line x1="162" y1="137" x2="204" y2="137" class="arrow" />
+  <!-- AI RUNS DISCOVERY -->
+  <rect x="204" y="116" width="160" height="42" rx="8" class="task-service" />
+  <text x="284" y="132" class="label-bold">Run Discovery</text>
+  <text x="284" y="146" class="label-sm">Relational Mirror active</text>
+  <circle cx="364" cy="158" r="9" class="evt-intermediate" />
+  <text x="376" y="170" class="label-xs" text-anchor="start">Session timer</text>
+  <line x1="284" y1="158" x2="284" y2="190" class="arrow" />
+  <!-- AI ASSESSES WITH ERROR BOUNDARY -->
+  <rect x="204" y="190" width="160" height="42" rx="8" class="task-service" />
+  <text x="284" y="206" class="label-bold">Assess &amp; Diagnose</text>
+  <text x="284" y="220" class="label-sm">Identify False Positives</text>
+  <circle cx="364" cy="218" r="9" class="evt-error" />
+  <!-- RED-LINE ESCALATION -->
+  <line x1="373" y1="218" x2="576" y2="218" class="msg-arrow" />
+  <text x="478" y="210" class="note">Red-line triggered</text>
+  <rect x="576" y="197" width="148" height="42" rx="8" class="task-clinical" />
+  <text x="650" y="213" class="label-bold">Review Alert</text>
+  <text x="650" y="227" class="label-sm">Assess severity</text>
+  <line x1="650" y1="239" x2="650" y2="260" class="arrow" />
+  <rect x="576" y="260" width="148" height="42" rx="8" class="task-clinical" />
+  <text x="650" y="276" class="label-bold">Contact User</text>
+  <text x="650" y="290" class="label-sm">Clinical hand-off</text>
+  <line x1="650" y1="302" x2="650" y2="322" class="arrow" />
+  <circle cx="650" cy="334" r="10" class="evt-end" />
+  <text x="650" y="354" class="label-xs">Clinical Handoff</text>
+  <!-- FP GATEWAY -->
+  <line x1="284" y1="232" x2="284" y2="270" class="arrow" />
+  <polygon points="284,270 324,300 284,330 244,300" class="gateway" />
+  <text x="284" y="302" class="gw-symbol">X</text>
+  <text x="237" y="270" class="label-sm">FP found?</text>
+  <line x1="244" y1="300" x2="92" y2="300" stroke="#777" stroke-width="1.3" fill="none" />
+  <text x="168" y="292" class="branch-no">No</text>
+  <line x1="92" y1="300" x2="92" y2="160" stroke="#777" stroke-width="1.3" fill="none" stroke-dasharray="5,3" />
+  <line x1="92" y1="160" x2="92" y2="158" class="arrow" />
+  <text x="80" y="230" class="note" transform="rotate(-90,80,230)">More discovery</text>
+  <line x1="284" y1="330" x2="284" y2="370" class="arrow" />
+  <text x="297" y="355" class="branch-yes">Yes</text>
+  <!-- ASSIGN TRACK -->
+  <rect x="204" y="370" width="160" height="42" rx="8" class="task-service" />
+  <text x="284" y="386" class="label-bold">Assign Track</text>
+  <text x="284" y="400" class="label-sm">Based on FP type</text>
+  <line x1="364" y1="391" x2="400" y2="391" class="msg-arrow" />
+  <!-- CONTENT OPS PREPARES -->
+  <rect x="400" y="370" width="140" height="42" rx="8" class="task-manual" />
+  <text x="470" y="386" class="label-bold">Prepare Track</text>
+  <text x="470" y="400" class="label-sm">Curate content queue</text>
+  <line x1="470" y1="412" x2="470" y2="450" class="arrow" />
+  <!-- CONTENT DELIVERS -->
+  <rect x="400" y="450" width="140" height="42" rx="8" class="task-service" />
+  <text x="470" y="466" class="label-bold">Deliver Content</text>
+  <text x="470" y="480" class="label-sm">Stories, scripture, etc.</text>
+  <line x1="400" y1="471" x2="162" y2="471" class="msg-arrow" />
+  <!-- USER ENGAGES -->
+  <rect x="22" y="450" width="140" height="42" rx="8" class="task-user" />
+  <text x="92" y="466" class="label-bold">Engage Content</text>
+  <text x="92" y="480" class="label-sm">Reflect, respond</text>
+  <circle cx="143" cy="492" r="9" class="evt-intermediate" />
+  <text x="168" y="510" class="label-xs">Check-in</text>
+  <line x1="92" y1="492" x2="92" y2="530" stroke="#777" stroke-width="1.3" fill="none" />
+  <line x1="92" y1="530" x2="204" y2="530" class="arrow" />
+  <!-- AI EVALUATES -->
+  <rect x="204" y="510" width="160" height="42" rx="8" class="task-service" />
+  <text x="284" y="526" class="label-bold">Evaluate Progress</text>
+  <text x="284" y="540" class="label-sm">Monitor engagement</text>
+  <line x1="284" y1="552" x2="284" y2="580" class="arrow" />
+  <!-- RESONATES GATEWAY -->
+  <polygon points="284,580 324,610 284,640 244,610" class="gateway" />
+  <text x="284" y="612" class="gw-symbol">X</text>
+  <text x="232" y="578" class="label-sm">Resonates?</text>
+  <line x1="324" y1="610" x2="378" y2="610" class="arrow" />
+  <text x="352" y="602" class="branch-no">No</text>
+  <!-- SUB-GATEWAY: NEEDS COACH? -->
+  <polygon points="408,610 438,630 408,650 378,630" class="gateway" />
+  <text x="408" y="632" font-size="10" fill="#d97706" text-anchor="middle" dominant-baseline="central" font-weight="700">X</text>
+  <text x="408" y="660" class="label-xs">Needs</text>
+  <text x="408" y="670" class="label-xs">coach?</text>
+  <line x1="438" y1="630" x2="576" y2="630" class="msg-arrow" />
+  <text x="507" y="622" class="branch-yes">Yes</text>
+  <!-- CLINICAL: ASSIGN COACH -->
+  <rect x="576" y="610" width="148" height="42" rx="8" class="task-clinical" />
+  <text x="650" y="626" class="label-bold">Assign Coach</text>
+  <text x="650" y="640" class="label-sm">Human intervention</text>
+  <line x1="650" y1="652" x2="650" y2="680" class="arrow" />
+  <circle cx="650" cy="692" r="10" class="evt-end-good" />
+  <text x="650" y="712" class="label-xs">Coaching Path</text>
+  <!-- NO COACH — RE-ENTER DISCOVERY -->
+  <line x1="408" y1="650" x2="408" y2="690" stroke="#777" stroke-width="1.3" fill="none" />
+  <line x1="408" y1="690" x2="172" y2="690" stroke="#777" stroke-width="1.3" fill="none" stroke-dasharray="5,3" />
+  <line x1="172" y1="690" x2="172" y2="137" stroke="#777" stroke-width="1.3" fill="none" stroke-dasharray="5,3" />
+  <line x1="172" y1="137" x2="204" y2="137" class="arrow" />
+  <text x="195" y="425" class="note" transform="rotate(-90,195,425)">Re-enter Discovery</text>
+  <!-- YES — CONTINUE -->
+  <line x1="284" y1="640" x2="284" y2="700" class="arrow" />
+  <text x="297" y="675" class="branch-yes">Yes</text>
+  <!-- TRACK COMPLETE GATEWAY -->
+  <polygon points="284,700 324,730 284,760 244,730" class="gateway" />
+  <text x="284" y="732" class="gw-symbol">X</text>
+  <text x="232" y="700" class="label-sm">Track</text>
+  <text x="232" y="711" class="label-sm">complete?</text>
+  <line x1="324" y1="730" x2="470" y2="730" stroke="#777" stroke-width="1.3" fill="none" />
+  <text x="398" y="722" class="branch-no">No</text>
+  <line x1="470" y1="730" x2="470" y2="494" stroke="#777" stroke-width="1.3" fill="none" stroke-dasharray="5,3" />
+  <line x1="470" y1="494" x2="470" y2="492" class="arrow" />
+  <text x="483" y="612" class="note" transform="rotate(90,483,612)">Next content</text>
+  <line x1="284" y1="760" x2="284" y2="790" class="arrow" />
+  <text x="297" y="780" class="branch-yes">Yes</text>
+  <line x1="284" y1="790" x2="92" y2="790" stroke="#777" stroke-width="1.3" fill="none" />
+  <line x1="92" y1="790" x2="92" y2="810" class="arrow" />
+  <!-- USER COMPLETES -->
+  <rect x="22" y="810" width="140" height="42" rx="8" class="task-user" />
+  <text x="92" y="826" class="label-bold">Reflect &amp; Integrate</text>
+  <text x="92" y="840" class="label-sm">Apply discernment</text>
+  <line x1="92" y1="852" x2="92" y2="878" class="arrow" />
+  <!-- END -->
+  <circle cx="92" cy="892" r="12" class="evt-end-good" />
+  <circle cx="92" cy="892" r="8" fill="none" stroke="#059669" stroke-width="2" />
+  <text x="92" y="918" class="label-bold">Integrated</text>
+  <text x="92" y="932" class="label-bold">Discernment</text>
+</svg>
+</body>
+</html>
