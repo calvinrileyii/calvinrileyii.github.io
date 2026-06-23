@@ -24,6 +24,7 @@
     .label-bold { font-size: 11px; fill: #1a1a1a; text-anchor: middle; dominant-baseline: central; font-weight: 600; }
     .label-sm { font-size: 9.5px; fill: #666; text-anchor: middle; dominant-baseline: central; }
     .label-xs { font-size: 8.5px; fill: #888; text-anchor: middle; dominant-baseline: central; }
+    .leg { font-size: 9px; fill: #555; text-anchor: start; dominant-baseline: central; }
     .arrow { stroke: #777; stroke-width: 1.3; fill: none; marker-end: url(#bah); }
     .msg-arrow { stroke: #777; stroke-width: 1.3; fill: none; stroke-dasharray: 6,3; marker-end: url(#bah); }
     .lane-border { stroke: #ccc; stroke-width: 1; fill: none; }
@@ -50,22 +51,22 @@
   </defs>
   <!-- LEGEND -->
   <g transform="translate(10, 8)">
-    <circle cx="8" cy="7" r="6" class="evt-start" />
-    <text x="20" y="10" class="label-xs" text-anchor="start">Start</text>
-    <circle cx="58" cy="7" r="6" class="evt-end" />
-    <text x="70" y="10" class="label-xs" text-anchor="start">End</text>
-    <rect x="100" y="1" width="18" height="12" rx="3" class="task-user" />
-    <text x="124" y="10" class="label-xs" text-anchor="start">User Task</text>
-    <rect x="190" y="1" width="18" height="12" rx="3" class="task-service" />
-    <text x="214" y="10" class="label-xs" text-anchor="start">Service Task</text>
-    <rect x="290" y="1" width="18" height="12" rx="3" class="task-manual" />
-    <text x="314" y="10" class="label-xs" text-anchor="start">Manual Task</text>
-    <polygon points="404,7 411,1 418,7 411,13" class="gateway" />
-    <text x="424" y="10" class="label-xs" text-anchor="start">Gateway</text>
-    <circle cx="478" cy="7" r="6" class="evt-error" />
-    <text x="490" y="10" class="label-xs" text-anchor="start">Error Event</text>
-    <line x1="604" y1="7" x2="628" y2="7" class="msg-arrow" />
-    <text x="634" y="10" class="label-xs" text-anchor="start">Message</text>
+    <circle cx="6" cy="7" r="6" class="evt-start" />
+    <text x="17" y="7" class="leg">Start</text>
+    <circle cx="98" cy="7" r="6" class="evt-end" />
+    <text x="109" y="7" class="leg">End</text>
+    <rect x="184" y="1" width="18" height="12" rx="3" class="task-user" />
+    <text x="208" y="7" class="leg">User</text>
+    <rect x="276" y="1" width="18" height="12" rx="3" class="task-service" />
+    <text x="300" y="7" class="leg">Service</text>
+    <rect x="368" y="1" width="18" height="12" rx="3" class="task-manual" />
+    <text x="392" y="7" class="leg">Manual</text>
+    <polygon points="460,7 467,1 474,7 467,13" class="gateway" />
+    <text x="480" y="7" class="leg">Gateway</text>
+    <circle cx="556" cy="7" r="6" class="evt-error" />
+    <text x="567" y="7" class="leg">Error</text>
+    <line x1="632" y1="7" x2="652" y2="7" class="msg-arrow" />
+    <text x="658" y="7" class="leg">Message</text>
   </g>
   <!-- SWIM LANE BACKGROUNDS -->
   <rect x="5" y="32" width="175" height="1063" rx="4" fill="#eff6ff" opacity="0.25" />
