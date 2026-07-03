@@ -4,15 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Silas — Case Study · Calvin Riley</title>
-  <meta name="description" content="Silas — an AI-agent project in active development. Case study in progress." />
+  <meta name="description" content="Silas — an agentic sales-intelligence engine that scores every prospect by ecosystem leverage and validates genuine product-fit before it ever ranks a lead." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
   <nav class="nav">
     <div class="wrap">
       <div class="brand">Calvin <span>Riley</span></div>
       <div class="links">
         <a href="index.html">← All work</a>
+        <a href="#evaluation">Evaluation</a>
+        <a href="#learnings">Learnings</a>
         <a href="index.html#contact">Contact</a>
       </div>
     </div>
@@ -20,46 +23,134 @@
 
   <header class="cs-hero">
     <div class="wrap">
-      <span class="eyebrow">Case Study · Founder · In progress</span>
+      <span class="eyebrow">Case Study · Builder &amp; Product Owner · 2026</span>
       <h1>Silas</h1>
-      <p class="sub">An AI-agent project in active development.</p>
+      <p class="sub">An agentic sales-intelligence engine that finds where a payments platform is a <i>genuine</i> strategic fit — and scores every prospect by ecosystem leverage, not in isolation.</p>
     </div>
   </header>
 
   <div class="wrap">
     <div class="tldr">
       <h2>TL;DR</h2>
-      <p class="muted"><i>This case study is being written. The structure below mirrors my other deep dives — I'm filling in the detail from the work already done. How I navigate the ambiguity is the proof, not just the finish line.</i></p>
+      <p>Sales teams burn time on prospects that look right but don't actually need the product. <b>Silas</b> is an agentic sales-intelligence engine I designed and built for my team at Equinox Payments. It maps the payments supply chain, validates real product-fit <i>before</i> it scores anything, ranks prospects on a five-dimension ecosystem-aware model, and outputs an interactive dashboard that explains the <i>why</i> behind every score. Built on Claude with a prospecting/enrichment data layer and a Python scoring engine.</p>
       <ul class="facts">
-        <li><b>Goal</b> To be added</li>
-        <li><b>My role</b> Founder</li>
-        <li><b>Timeframe</b> To be added</li>
-        <li><b>Tools</b> To be added</li>
-        <li><b>Core problem</b> To be added</li>
-        <li><b>Key learning</b> To be added</li>
+        <li><b>Goal</b> Replace generic lead lists with strategic, fit-scored, ecosystem-aware prospecting</li>
+        <li><b>My role</b> Builder &amp; product owner — architecture, scoring model, agent prompts, workflow</li>
+        <li><b>Timeframe</b> 2026</li>
+        <li><b>Tools</b> Claude (Anthropic) · Next.js · prospecting/enrichment MCP data layer · Python scoring + HTML dashboard</li>
+        <li><b>Core problem</b> Prospects that look like a fit but don't actually need the product</li>
+        <li><b>Key learning</b> The highest-leverage prospect is often <i>upstream</i> of the one you were about to call</li>
       </ul>
     </div>
-    <p class="tiny" style="margin:10px 0 0;">To complete this page: fill out <code>PROJECT_INTAKE_TEMPLATE.md</code> for Silas and ask Claude to populate this file.</p>
   </div>
 
   <div class="wrap cs-body">
-    <section id="context"><h2><span class="num">01</span> Context</h2><p class="muted">The backstory and the opportunity Silas is built for. <i>(To be added from intake.)</i></p></section>
-    <section id="problem"><h2><span class="num">02</span> Problem</h2><p class="muted">The specific problem Silas solves, and why an agent is the right form. <i>(To be added.)</i></p></section>
-    <section id="approach"><h2><span class="num">03</span> Approach &amp; Process</h2><p class="muted">The architecture and design decisions so far. <i>(To be added.)</i></p></section>
-    <section id="ai-integration"><h2><span class="num">04</span> AI Integration</h2><p class="muted">The agent loop, the model choices, and the human's role. <i>(To be added.)</i></p></section>
-    <section id="iteration"><h2><span class="num">05</span> Iteration</h2><p class="muted">How the build has evolved and what the pivots taught me. <i>(To be added.)</i></p></section>
-    <section id="evaluation"><h2><span class="num">06</span> Evaluation</h2><p class="muted">Testing approach and the risks identified. <i>(To be added.)</i></p></section>
-    <section id="impact"><h2><span class="num">07</span> Aspirational Impact &amp; KPIs</h2><p class="muted">Target outcomes and the KPIs I'd own. <i>(To be added.)</i></p></section>
-    <section id="learnings"><h2><span class="num">08</span> Key Learnings &amp; Stewardship</h2><p class="muted">What I'm learning and how I'd scale it responsibly. <i>(To be added.)</i></p></section>
+
+    <section id="context">
+      <h2><span class="num">01</span> Context</h2>
+      <p>Payments distribution isn't a flat market — it's a supply chain. Decisions flow <b>downhill</b>: from the <b>gateway</b>, to the <b>software vendor (ISV)</b>, to the <b>sales organization (ISO)</b>, to the <b>merchant</b>. A merchant uses whatever their software supports; that software connects through whatever gateway it certified with. Leverage lives upstream.</p>
+      <p class="muted">A generic lead list ignores all of that. It treats a downstream reseller and the gateway that powers a thousand merchants as if they were the same size of opportunity. Silas was built to see the whole chain — and to prioritize where a single relationship unlocks an entire downstream base.</p>
+    </section>
+
+    <section id="problem">
+      <h2><span class="num">02</span> Problem</h2>
+      <p>Two failure modes waste the most time in technical sales:</p>
+      <ul>
+        <li><b>False-positive prospects.</b> Companies that look like a fit on paper but have no real need for the product. This is the number-one way a prospecting effort quietly wastes a week.</li>
+        <li><b>Scoring in isolation.</b> Ranking a prospect on its own merits misses ecosystem leverage — where one upstream deal is worth an entire downstream base.</li>
+      </ul>
+      <div class="callout"><b>The bar Silas has to clear:</b> surface prospects that genuinely need the product, ranked by where they sit in the supply chain — and explain, in plain language, <i>why</i> each one matters.</div>
+    </section>
+
+    <section id="approach">
+      <h2><span class="num">03</span> Approach &amp; Process</h2>
+      <p>Silas runs as a multi-step agentic workflow with a hard quality gate in the middle. Nothing gets scored until it has proven it actually needs what we sell.</p>
+      <table class="tbl">
+        <thead><tr><th>Stage</th><th>What happens</th></tr></thead>
+        <tbody>
+          <tr><td><b>1 · Understand the request</b></td><td>Resolve target segment, vertical, geography, size, and volume — sensible defaults, then move.</td></tr>
+          <tr><td><b>2 · Validate need (quality gate)</b></td><td>Website-keyword and technographic checks confirm a real product touchpoint. Non-fits are disqualified <i>before</i> any scoring effort is spent.</td></tr>
+          <tr><td><b>3 · Strategic research</b></td><td>Firmographics, technology stack, supply-chain relationships, growth and buying signals, decision-maker intelligence.</td></tr>
+          <tr><td><b>4 · Map the ecosystem</b></td><td>Who supplies them, who they connect to, how many merchants/locations sit downstream — and an estimate of true opportunity size.</td></tr>
+          <tr><td><b>5 · Score &amp; rank</b></td><td>Five-dimension model → a priority tier and a specific recommended product for every prospect.</td></tr>
+          <tr><td><b>6 · Dashboard &amp; outreach</b></td><td>Interactive dashboard with the reasoning behind each score; outreach framing on request.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="ai-integration">
+      <h2><span class="num">04</span> AI Integration</h2>
+      <p><b>Claude is the reasoning engine.</b> It interprets the request, runs the research and ecosystem mapping, applies the scoring logic, and writes the strategic rationale. A prospecting/enrichment data layer supplies firmographics, technographics, and verified contacts; a Python engine applies the scoring model deterministically and renders the dashboard.</p>
+      <p class="muted">The scoring model is the heart of it — 100 points across five dimensions:</p>
+      <ul>
+        <li><b>Ecosystem Leverage</b> — where in the supply chain the prospect sits (upstream wins)</li>
+        <li><b>Technical Fit</b> — does our platform genuinely match their stack and needs</li>
+        <li><b>Purchase Readiness</b> — active intent, hiring, funding, and timing signals</li>
+        <li><b>Persona &amp; Contact Quality</b> — right role, right tenure, reachable</li>
+        <li><b>Opportunity Size</b> — estimated volume across their footprint</li>
+      </ul>
+      <p class="muted">Scores roll up into priority tiers, and each prospect gets a specific recommended product for its use case — so the output is a decision, not a spreadsheet.</p>
+    </section>
+
+    <section id="iteration">
+      <h2><span class="num">05</span> Iteration</h2>
+      <p>The design decisions that made Silas strategic rather than just fast:</p>
+      <table class="tbl">
+        <thead><tr><th>Decision</th><th>Options weighed</th><th>Call &amp; rationale</th></tr></thead>
+        <tbody>
+          <tr><td><b>Where the quality gate goes</b></td><td>Score everything, then filter · vs · validate need first</td><td><b>Validate first.</b> Disqualifying false positives before scoring is what keeps the whole pipeline honest.</td></tr>
+          <tr><td><b>How to score</b></td><td>Prospect in isolation · vs · ecosystem-aware</td><td><b>Ecosystem-aware.</b> One upstream relationship can be worth a whole downstream base — the model has to reward that.</td></tr>
+          <tr><td><b>Handling indirect players</b></td><td>Score them directly · vs · score by their upstream partner</td><td><b>Score by the partner behind them,</b> and surface that partner as the real opportunity when it's the bigger prize.</td></tr>
+          <tr><td><b>Export behavior</b></td><td>Auto-export results · vs · human approval</td><td><b>Never auto-export.</b> Always show a sample and the cost first, then wait for a person to say go.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="evaluation">
+      <h2><span class="num">06</span> Evaluation</h2>
+      <p>An intelligence tool is only useful if you can trust it. The risks and the guardrails:</p>
+      <table class="tbl">
+        <thead><tr><th>Risk</th><th>Mitigation</th></tr></thead>
+        <tbody>
+          <tr><td><b>False-positive prospects</b></td><td>Website-keyword + technographic validation gate before scoring; competitors and non-fits auto-excluded</td></tr>
+          <tr><td><b>Missing or thin data</b></td><td>Absent data never auto-disqualifies — it's flagged, not punished, to avoid throwing away real prospects</td></tr>
+          <tr><td><b>Over-trusting a number</b></td><td>Silas explains <i>why</i> a prospect scored the way it did; the salesperson makes the call</td></tr>
+          <tr><td><b>Drift over time</b></td><td>A structured feedback loop captures rep judgments to tune the model against real outcomes</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="impact">
+      <h2><span class="num">07</span> Aspirational Impact &amp; KPIs</h2>
+      <p class="muted">What Silas is built to move:</p>
+      <div class="kpis">
+        <div class="kpi"><div class="n">5-dim</div><div class="l">Ecosystem-aware scoring in place of a flat lead list</div></div>
+        <div class="kpi"><div class="n">1 → many</div><div class="l">Surface upstream deals that unlock a whole downstream base</div></div>
+        <div class="kpi"><div class="n">Gate first</div><div class="l">Validate genuine need before any scoring effort is spent</div></div>
+      </div>
+      <p class="muted">The outcomes I'd own at scale: less time on non-fits, a higher share of conversations with prospects who actually need the platform, and outreach that lands because it references something specific and true.</p>
+    </section>
+
+    <section id="learnings">
+      <h2><span class="num">08</span> Key Learnings &amp; Stewardship</h2>
+      <ul>
+        <li><b>Qualify before you score.</b> The cheapest thing you can do is refuse to spend effort on a prospect that was never a fit.</li>
+        <li><b>Explain the why.</b> A score nobody understands doesn't change behavior; a one-line strategic reason does.</li>
+        <li><b>Keep the human in the loop.</b> No auto-export, no "trust me" — a person approves what leaves the system.</li>
+      </ul>
+      <div class="callout"><b>If I scaled this:</b> keep the validation gate ruthless, keep every score explainable, and let the feedback loop — not a static rubric — be what makes the model smarter over time.</div>
+    </section>
+
   </div>
 
   <footer class="footer">
     <div class="wrap">
-      <h2>More on Silas soon.</h2>
-      <p>Curious where this agent is going? Let's talk.</p>
+      <h2>Want the deeper walkthrough?</h2>
+      <p>Happy to talk through the agent architecture, the scoring model, or the ecosystem strategy.</p>
       <div class="contacts"><a href="mailto:calvinrileyii@gmail.com">Email</a><a href="https://github.com/calvinrileyii" target="_blank" rel="noopener">GitHub</a></div>
       <div><a class="backlink" href="index.html">← Back to all work</a></div>
     </div>
   </footer>
+
 </body>
 </html>

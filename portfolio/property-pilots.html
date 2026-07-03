@@ -4,15 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Property Pilots — Case Study · Calvin Riley</title>
-  <meta name="description" content="Property Pilots — an applied-AI venture. Case study in progress." />
+  <meta name="description" content="Property Pilots — a multi-agent AI system that gives a single owner-operator landlord the operating capacity of a full property-management company." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
   <nav class="nav">
     <div class="wrap">
       <div class="brand">Calvin <span>Riley</span></div>
       <div class="links">
         <a href="index.html">← All work</a>
+        <a href="#evaluation">Evaluation</a>
+        <a href="#learnings">Learnings</a>
         <a href="index.html#contact">Contact</a>
       </div>
     </div>
@@ -20,46 +23,119 @@
 
   <header class="cs-hero">
     <div class="wrap">
-      <span class="eyebrow">Case Study · Founder · In progress</span>
+      <span class="eyebrow">Case Study · Founder, Orchestrator &amp; Payments Agent · 2026</span>
       <h1>Property Pilots</h1>
-      <p class="sub">An applied-AI venture in the property / real-estate space.</p>
+      <p class="sub">A multi-agent AI system that gives a single landlord the operating capacity of a full property-management company.</p>
     </div>
   </header>
 
   <div class="wrap">
     <div class="tldr">
       <h2>TL;DR</h2>
-      <p class="muted"><i>This case study is being written. The structure below mirrors my other deep dives — I'm filling in the detail from the work already done. The thinking and the decisions matter here as much as the finished product.</i></p>
+      <p>Small, independent landlords own roughly 60–70% of America's ~50 million rental units, yet they're stuck choosing between paying a property manager ~10% of rent or drowning in manual coordination. <b>Property Pilots</b> replicates an entire PM team as specialized AI agents — payments, onboarding, listings, leasing, compliance — coordinated by a single orchestrator. I lead the team and own the Payments Agent. We stood up a working multi-agent prototype on Claude in under 30 minutes after a heavier framework stalled.</p>
       <ul class="facts">
-        <li><b>Goal</b> To be added</li>
-        <li><b>My role</b> Founder</li>
-        <li><b>Timeframe</b> To be added</li>
-        <li><b>Tools</b> To be added</li>
-        <li><b>Core problem</b> To be added</li>
-        <li><b>Key learning</b> To be added</li>
+        <li><b>Goal</b> Full property-management capability without the cost, time, or loss of control</li>
+        <li><b>My role</b> Team lead &amp; orchestrator · owner of the Payments Agent</li>
+        <li><b>Timeframe</b> 2026 · BUSM 6393 (AI for Business)</li>
+        <li><b>Tools</b> Claude (Anthropic) Projects · multi-agent architecture</li>
+        <li><b>Core problem</b> PMs charge ~10% of rent for largely coordination work</li>
+        <li><b>Key learning</b> Structure AI like a team with clear roles — not one do-everything bot</li>
       </ul>
     </div>
-    <p class="tiny" style="margin:10px 0 0;">To complete this page: fill out <code>PROJECT_INTAKE_TEMPLATE.md</code> for Property Pilots and ask Claude to populate this file.</p>
   </div>
 
   <div class="wrap cs-body">
-    <section id="context"><h2><span class="num">01</span> Context</h2><p class="muted">The market, the user, and why I started building here. <i>(To be added from intake.)</i></p></section>
-    <section id="problem"><h2><span class="num">02</span> Problem</h2><p class="muted">The specific friction in the property workflow, and why AI is the right answer to it. <i>(To be added.)</i></p></section>
-    <section id="approach"><h2><span class="num">03</span> Approach &amp; Process</h2><p class="muted">Research, workflow decomposition, and the architecture decisions so far. <i>(To be added.)</i></p></section>
-    <section id="ai-integration"><h2><span class="num">04</span> AI Integration</h2><p class="muted">Where AI lives in the solution and what the human still owns. <i>(To be added.)</i></p></section>
-    <section id="iteration"><h2><span class="num">05</span> Iteration</h2><p class="muted">What's changed as the work progressed; the pivots and what they taught me. <i>(To be added.)</i></p></section>
-    <section id="evaluation"><h2><span class="num">06</span> Evaluation</h2><p class="muted">How I'm testing it, and the risks I've identified. <i>(To be added.)</i></p></section>
-    <section id="impact"><h2><span class="num">07</span> Aspirational Impact &amp; KPIs</h2><p class="muted">The outcomes and metrics I'd own at scale. <i>(To be added.)</i></p></section>
-    <section id="learnings"><h2><span class="num">08</span> Key Learnings &amp; Stewardship</h2><p class="muted">What I'm learning and how I'd scale it responsibly. <i>(To be added.)</i></p></section>
+
+    <section id="context">
+      <h2><span class="num">01</span> Context</h2>
+      <p>There are about 50 million rental units in the United States, and an estimated 60–70% of them — roughly 30–35 million units — are held by small, independent owner-operators rather than large institutions. It's a massive, fragmented, underserved majority.</p>
+      <p class="muted">These landlords rarely have the time or scale to run their properties like a business. Military homeowners feel it most acutely: a deployment or PCS move turns a house into a remote asset that has to be managed from another state or country. The market has a framework for this problem — the Frei &amp; Morris lens of "solve for trust" and treating new capability as a workforce decision — which is exactly the frame Property Pilots is built on.</p>
+    </section>
+
+    <section id="problem">
+      <h2><span class="num">02</span> Problem</h2>
+      <p>Traditional property managers charge around 10% of monthly rent for work that is largely coordination — screening prospects, chasing paperwork, fielding maintenance calls, managing listings and vendor emails. For a small landlord on thin margins, that fee is painful; doing it all yourself is a second job.</p>
+      <div class="callout"><b>The forced choice:</b> high cost, or high time. Property Pilots exists to remove it. <b>How might we give landlords the full capabilities of a property-management team — without sacrificing their time, margins, or control over their most valuable asset?</b></div>
+    </section>
+
+    <section id="approach">
+      <h2><span class="num">03</span> Approach &amp; Process</h2>
+      <p>Instead of building one general-purpose "property bot," we modeled the product on a real property-management org chart. Each human expert on the team defines the rules for the AI agent that mirrors their role — so the system is structured like a team, with clear responsibilities and hand-offs, not a single black box.</p>
+      <table class="tbl">
+        <thead><tr><th>Function</th><th>Human expert</th><th>AI agent</th></tr></thead>
+        <tbody>
+          <tr><td><b>Coordination</b></td><td>Calvin Riley — team lead</td><td>Rex — Orchestrator; routes tasks and holds the workflow logic</td></tr>
+          <tr><td><b>Payments &amp; financial ops</b></td><td>Calvin Riley — payments</td><td>Payments Agent — rent collection, processing, financial reporting, repair-payment coordination</td></tr>
+          <tr><td><b>Onboarding &amp; product</b></td><td>Gigih Nugraha — resident PM</td><td>Onboarding Agent — site surveys, owner contracts, property data intake</td></tr>
+          <tr><td><b>Listings &amp; marketing</b></td><td>Angela Xu — marketing</td><td>Listing + Marketing Agent — Zillow/Airbnb posting, lead capture, tenant messaging</td></tr>
+          <tr><td><b>Leasing &amp; compliance</b></td><td>Joshua Cole — legal</td><td>Tenant + Compliance Agent — screening, lease generation, Fair Housing guardrails</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="ai-integration">
+      <h2><span class="num">04</span> AI Integration</h2>
+      <p>A central <b>Orchestrator ("Rex")</b> receives a task, decides which specialized agent owns it, and routes accordingly — keeping the workflow coherent across payments, onboarding, listings, and compliance. The operating principle is deliberate: <b>the human defines the rules; the AI executes at scale.</b></p>
+      <p class="muted">I own the <b>Payments Agent</b> — the piece closest to my day job in payments. It automates rent collection and payment processing, produces real-time financial reporting the landlord can actually read, and coordinates payment for facility repairs. The human still owns judgment: approvals, exceptions, and any decision that affects a tenant's housing. AI handles the volume; the person keeps the wheel.</p>
+    </section>
+
+    <section id="iteration">
+      <h2><span class="num">05</span> Iteration</h2>
+      <p>The most useful lesson came from a tooling dead end. We first tried to stand up a custom local agent framework, then pivoted — and the pivot is the whole point.</p>
+      <table class="tbl">
+        <thead><tr><th>Decision</th><th>Options weighed</th><th>Call &amp; rationale</th></tr></thead>
+        <tbody>
+          <tr><td><b>Prototype platform</b></td><td>OpenCLAW (custom local agent framework) vs. Claude Projects</td><td><b>Claude Projects.</b> ~1.5 days on OpenCLAW on an old Mac Mini produced nothing usable in the timeline; Claude configured a working multi-agent property manager in under 30 minutes — no API, no infrastructure.</td></tr>
+          <tr><td><b>Architecture</b></td><td>One general agent vs. orchestrator + specialists</td><td><b>Orchestrator + specialists.</b> Mirroring the PM org chart made roles explainable, auditable, and easy for each human expert to own.</td></tr>
+          <tr><td><b>Pricing model</b></td><td>~10% of rent vs. flat subscription</td><td><b>Flat monthly subscription.</b> Aligns cost with software value delivered, not with the size of someone's rent check.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="evaluation">
+      <h2><span class="num">06</span> Evaluation</h2>
+      <p>Handing an AI system partial control of someone's most valuable asset — and decisions that affect where people live — raises real risks. We designed guardrails in from the start rather than bolting them on.</p>
+      <table class="tbl">
+        <thead><tr><th>Risk</th><th>Mitigation</th></tr></thead>
+        <tbody>
+          <tr><td><b>Bias in tenant screening</b></td><td>Fair Housing compliance baked into screening logic; a human can always review and challenge any decision</td></tr>
+          <tr><td><b>Sensitive data exposure</b></td><td>Encryption, strict privacy compliance, and minimal data collection — only what's necessary</td></tr>
+          <tr><td><b>Over-automation of a major asset</b></td><td>Human-in-the-loop on approvals and exceptions; AI executes, the owner decides</td></tr>
+          <tr><td><b>Loss of trust</b></td><td>Every AI action is explainable and auditable — what happened, why, and what it cost — with real-time financial reporting</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="impact">
+      <h2><span class="num">07</span> Aspirational Impact &amp; KPIs</h2>
+      <p class="muted">Targets Property Pilots is built to own at scale:</p>
+      <div class="kpis">
+        <div class="kpi"><div class="n">~10% → flat</div><div class="l">Replace percentage-of-rent PM fees with a predictable monthly subscription</div></div>
+        <div class="kpi"><div class="n">30–35M</div><div class="l">Underserved owner-operator rental units in the addressable market</div></div>
+        <div class="kpi"><div class="n">5 agents</div><div class="l">Specialized roles coordinated under one orchestrator</div></div>
+      </div>
+    </section>
+
+    <section id="learnings">
+      <h2><span class="num">08</span> Key Learnings &amp; Stewardship</h2>
+      <ul>
+        <li><b>Structure beats horsepower.</b> The advantage isn't "we use AI" — it's structuring AI like a team with clear roles, responsibilities, and workflows.</li>
+        <li><b>Ship to learn.</b> A working prototype in 30 minutes taught us more than 1.5 days of infrastructure ever could.</li>
+        <li><b>Stewardship is a design input.</b> Fair Housing, privacy, and explainability aren't features added later — they shape the screening logic and the data model from day one.</li>
+      </ul>
+      <div class="callout"><b>If I scaled this:</b> keep the human as the decision-maker on anything that touches a person's housing, keep every agent's action auditable, and let the orchestrator — not a person's inbox — absorb the coordination load.</div>
+    </section>
+
   </div>
 
   <footer class="footer">
     <div class="wrap">
-      <h2>This one's still cooking.</h2>
-      <p>Want to hear where Property Pilots is headed? Reach out.</p>
+      <h2>Want the deeper walkthrough?</h2>
+      <p>Happy to talk through the multi-agent architecture, the payments automation, or the trade-offs.</p>
       <div class="contacts"><a href="mailto:calvinrileyii@gmail.com">Email</a><a href="https://github.com/calvinrileyii" target="_blank" rel="noopener">GitHub</a></div>
       <div><a class="backlink" href="index.html">← Back to all work</a></div>
     </div>
   </footer>
+
 </body>
 </html>
